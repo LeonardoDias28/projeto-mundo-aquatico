@@ -1,0 +1,236 @@
+/* Aplicar um estilo global a todos os elementos */
+* {
+    /* Define como o tamanho da caixa será calculado. 
+       'border-box' inclui padding e borda no cálculo da altura e largura do elemento */
+    box-sizing: border-box;
+    
+    /* Define a fonte padrão do projeto */
+    font-family: "Oxygen", system-ui, -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+      sans-serif;
+    
+    /* Remove as margens e o padding padrão de todos os elementos */
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* :root é usado para definir variáveis globais de CSS */
+  :root {
+    /* Definindo cores personalizadas que podem ser usadas ao longo do projeto */
+    --color-background: #030207; /* Cor de fundo */
+    --color-white: #fff;         /* Cor branca */
+    --color-blue: #1474b4;       /* Cor azul para links e detalhes */
+  }
+  
+  /* Estilos do body (corpo da página) */
+  body {
+    /* Cor de fundo do corpo da página usando a variável personalizada */
+    background-color: var(--color-background);
+    
+    /* Cor do texto no corpo da página */
+    color: var(--color-white);
+  }
+  
+  /* Estilos para os links (elemento <a>) */
+  a {
+    /* Cor azul definida anteriormente, aplicada aos links */
+    color: var(--color-blue);
+  }
+  
+  /* Estilizando a seção principal (hero) */
+  .hero {
+    /* Adiciona uma camada de fundo com transparência sobre o vídeo */
+    background: linear-gradient(rgba(0, 0, 0, 0.1), var(--color-background));
+    
+    /* Permite posicionar elementos com relação a este container */
+    position: relative;
+    
+    /* Define uma altura mínima para garantir que a seção ocupe a tela inteira */
+    min-height: 100vh;
+  }
+  
+  /* Estiliza o vídeo de fundo da seção hero */
+  .hero__background {
+    /* Faz com que o vídeo preencha o container de forma proporcional */
+    object-fit: cover;
+    
+    /* Posiciona o vídeo de forma absoluta, permitindo ajustes finos no posicionamento */
+    position: absolute;
+    top: 0; /* Alinha o vídeo ao topo */
+    
+    /* Define a altura e largura do vídeo para que ele cubra a tela inteira */
+    height: 100vh;
+    width: 100%;
+    
+    /* Z-index negativo para garantir que o vídeo fique por trás do conteúdo */
+    z-index: -10;
+  }
+  
+  /* Estiliza o conteúdo sobreposto ao vídeo (foreground) */
+  .hero__foreground {
+    /* Cor do texto sobre o vídeo */
+    color: var(--color-white);
+    
+    /* Adiciona um espaçamento acima do conteúdo para centralizar verticalmente */
+    padding-top: 40vh;
+    
+    /* Centraliza o texto */
+    text-align: center;
+  }
+  
+  /* Estiliza o título principal da seção hero */
+  .hero__title {
+    font-size: 5rem; /* Aumenta o tamanho da fonte */
+    font-weight: 300; /* Define a espessura da fonte (300 é um valor leve) */
+  }
+  
+  /* Estiliza o parágrafo abaixo do título */
+  .hero__text {
+    margin-top: 2rem; /* Adiciona um espaçamento superior */
+    letter-spacing: 0.5rem; /* Adiciona espaçamento entre as letras */
+    text-transform: uppercase; /* Transforma o texto em letras maiúsculas */
+  }
+  
+  /* Estiliza as seções da página */
+  .section {
+    overflow: hidden; /* Oculta qualquer conteúdo que ultrapasse os limites do container */
+    padding: 0 8rem; /* Adiciona espaçamento interno nas laterais */
+    text-align: center; /* Centraliza o texto */
+  }
+  
+  /* Estiliza os títulos das seções */
+  .section__title {
+    font-size: 3rem; /* Define o tamanho da fonte */
+    font-weight: 300; /* Espessura leve da fonte */
+    margin: 4rem auto; /* Adiciona espaçamento ao redor do título */
+  }
+  
+  /* Estiliza as imagens das seções */
+  .section__img, 
+  .section__img-inline {
+    border-radius: .75rem; /* Adiciona bordas arredondadas */
+    
+    /* Adiciona uma sombra ao redor da imagem */
+    box-shadow: 0 1rem 2rem -0.5rem rgba(20, 116, 180, 0.25);
+    
+    object-fit: cover; /* Faz com que a imagem se ajuste ao container */
+    object-position: top; /* Alinha a imagem pelo topo */
+    position: relative; /* Permite posicionar a imagem de forma relativa */
+    
+    /* Define uma altura máxima para as imagens */
+    max-height: 30rem;
+    width: 100%; /* Faz com que a imagem ocupe 100% da largura disponível */
+  }
+  
+  /* Estiliza o texto nas seções */
+  .section__text,
+  .section__text-inline {
+    font-size: 1.25rem; /* Tamanho da fonte um pouco maior */
+    line-height: 1.75; /* Aumenta o espaçamento entre as linhas */
+    margin: 4rem auto; /* Adiciona espaçamento ao redor do texto */
+  }
+  
+  /* Estiliza as imagens com alinhamento à esquerda (float) */
+  .section__img-inline {
+    border-top-left-radius: 4rem; /* Bordas arredondadas no canto superior esquerdo */
+    border-bottom-right-radius: 4rem; /* Bordas arredondadas no canto inferior direito */
+    float: left; /* Faz a imagem flutuar à esquerda */
+    margin-right: 4rem; /* Adiciona espaçamento à direita da imagem */
+    margin-bottom: 2rem; /* Espaçamento abaixo da imagem */
+    height: 25rem; /* Define uma altura fixa */
+    width: 20rem; /* Define uma largura fixa */
+  }
+  
+  /* Estiliza o texto alinhado à esquerda */
+  .section__text-inline {
+    margin-top: 6rem; /* Adiciona espaçamento superior */
+    text-align: left; /* Alinha o texto à esquerda */
+  }
+  
+  /* Adiciona espaçamento nos parágrafos dentro de text-inline */
+  .section__text-inline > p {
+    margin-top: 1.5rem; /* Adiciona espaçamento entre os parágrafos */
+  }
+  
+  /* Seleciona as imagens dentro da seção hangouts */
+  #hangouts img {
+    object-position: center; /* Centraliza o conteúdo da imagem */
+  }
+  
+  /* Estiliza as imagens da galeria */
+  .gallery__img {
+    border-radius: .75rem; /* Bordas arredondadas */
+    height: 16rem; /* Altura fixa */
+    width: 16rem; /* Largura fixa */
+    object-fit: cover; /* Faz a imagem se ajustar ao container */
+    transform: rotate(-2deg); /* Rotaciona levemente a imagem para dar estilo */
+  }
+  
+  /* Wrapper para as imagens da galeria */
+  .gallery__img-wrapper {
+    display: inline-block; /* Exibe os itens em linha */
+    position: relative; /* Permite posicionamento relativo */
+  }
+  
+  /* Adiciona espaçamento entre as imagens da galeria */
+  .gallery__img-wrapper + .gallery__img-wrapper {
+    margin-left: 3rem;
+    margin-top: 3rem;
+  }
+  
+  /* Rotaciona as imagens pares da galeria */
+  .gallery__img-wrapper:nth-child(even) > .gallery__img {
+    top: 1rem;
+    transform: rotate(2deg); /* Rotação em sentido oposto */
+  }
+  
+  /* Adiciona um pseudo-elemento decorativo às imagens da galeria */
+  .gallery__img-wrapper::after {
+    content: ""; /* Cria um elemento vazio */
+    background-color: rgb(228, 26, 26); /* Define uma cor de fundo vermelha */
+    border-radius: 999px; /* Cria um círculo perfeito */
+    display: block; /* Exibe o pseudo-elemento como um bloco */
+    height: 1.25rem; /* Altura do círculo */
+    width: 1.25rem; /* Largura do círculo */
+    position: absolute; /* Posiciona o círculo de forma absoluta */
+    top: 0.25rem;
+    right: 1rem;
+  }
+  
+  /* Ajusta a posição do círculo para as imagens pares */
+  .gallery__img-wrapper:nth-child(even)::after {
+    left: 1rem;
+  }
+  
+  /* Estiliza o rodapé */
+  footer {
+    margin-top: 4rem; /* Adiciona espaçamento acima do rodapé */
+    padding: 2rem; /* Adiciona espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo do rodapé */
+  }  
+
+  /* Estilo para o botão flutuante do WhatsApp */
+.whatsapp-flutuante {
+  position: fixed; /* Fixa a posição do botão na tela */
+  bottom: 20px; /* Distância do botão do fundo da tela */
+  right: 20px; /* Distância do botão da direita da tela */
+  background: linear-gradient(135deg, #25D366, #128C7E); /* Gradiente para o fundo do botão */
+  border-radius: 50%; /* Torna o botão redondo */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+  padding: 15px; /* Espaçamento interno do botão */
+  z-index: 1000; /* Garante que o botão fique acima de outros elementos */
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s; /* Transições suaves */
+}
+
+/* Estilo para a imagem dentro do botão */
+.whatsapp-flutuante img {
+  width: 50px; /* Largura do ícone do WhatsApp */
+  height: 50px; /* Altura do ícone do WhatsApp */
+}
+
+/* Efeito ao passar o mouse sobre o botão */
+.whatsapp-flutuante:hover {
+  background: linear-gradient(135deg, #1474b4, #030207); /* Inverte o gradiente ao passar o mouse */
+  transform: scale(1.1); /* Aumenta levemente o tamanho do botão ao passar o mouse */
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5); /* Aumenta a sombra ao passar o mouse */
+}
