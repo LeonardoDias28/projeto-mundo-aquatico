@@ -19,6 +19,7 @@ Para executar este projeto localmente, siga estas etapas:
 
 ## Uso
 Basta abrir o arquivo `index.html` em um navegador da web para explorar o mundo das focas!
+
 • <img width="20px" src="https://skillicons.dev/icons?i=html" alt="html5"/> HTML5\
 • <img width="20px" src="https://skillicons.dev/icons?i=css" alt="css icon"/> CSS3
 ## Autor
